@@ -1,0 +1,195 @@
+/* General Styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ffdde1, #ee9ca7); /* Soft gradient background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px;
+    max-width: 900px;
+    text-align: center;
+    overflow: hidden; /* Ensure content stays within bounds */
+}
+
+header h1 {
+    font-family: 'Pacifico', cursive;
+    color: #e91e63; /* Pink color */
+    font-size: 2.8em;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Message Section */
+.message-section {
+    position: relative;
+    padding: 40px 0;
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 30px;
+    min-height: 150px; /* Ensure enough space for interactive elements */
+}
+
+#main-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #6a0572; /* Darker purple */
+    transition: all 0.5s ease-in-out;
+    cursor: default; /* Indicate it's interactive */
+}
+
+/* Flower Interaction */
+#flower-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow interaction with elements below */
+}
+
+.flower {
+    position: absolute;
+    font-size: 2em;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    animation: fadeAndMoveUp 3s forwards; /* Animation for flowers */
+    color: #ff69b4; /* Hot pink */
+}
+
+@keyframes fadeAndMoveUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Love Section */
+.love-card {
+    background-color: #fff0f5; /* Light pink background */
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-top: 30px;
+}
+
+.love-card h2 {
+    font-family: 'Pacifico', cursive;
+    color: #c2185b; /* Deeper pink */
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.love-card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.flower-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 15px;
+    margin-bottom: 25px;
+    justify-content: center; /* Center items in grid */
+}
+
+.flower-image {
+    width: 100%;
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* Crop image to fit */
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.flower-image:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.love-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    color: #e91e63; /* Pink */
+    margin-top: 20px;
+    animation: pulse 1.5s infinite alternate; /* Pulsing effect */
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        text-shadow: none;
+    }
+    to {
+        transform: scale(1.05);
+        text-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
+    }
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    #main-message {
+        font-size: 1.2em;
+    }
+
+    .love-card h2 {
+        font-size: 1.8em;
+    }
+
+    .love-text {
+        font-size: 2em;
+    }
+
+    .flower-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    header h1 {
+        font-size: 1.7em;
+    }
+
+    #main-message {
+        font-size: 1em;
+    }
+
+    .love-card h2 {
+        font-size: 1.5em;
+    }
+
+    .love-text {
+        font-size: 1.8em;
+    }
+}
